@@ -1,5 +1,5 @@
 ****************
-package_name
+rsc_on_this_day
 ****************
 
-description goes here
+Displays Royal Society of Chemistry "On This Day" fact

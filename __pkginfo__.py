@@ -21,31 +21,25 @@ copyright   = """
 
 VERSION = "0.1.0"
 
-modname            = "package_name"
-py_modules		   = None
-entry_points	   = None
-#py_modules         = [modname]
-#entry_points       = {
-#	'console_scripts': [
-#		'package_name=package_name:main',
-#	]}
+modname            = "rsc_on_this_day"
+py_modules         = [modname]
+entry_points       = {
+	'console_scripts': [
+		f'rsc_on_this_day=rsc_on_this_day:main',
+	]}
 
 license            = 'GPL3'
 
-short_desc         = 'description goes here'
+short_desc         = 'Displays Royal Society of Chemistry "On This Day" fact'
 
 classifiers =  ['Development Status :: 3 - Alpha',
 				'Intended Audience :: Developers',
 				'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
 				'Operating System :: OS Independent',
 				'Programming Language :: Python',
-				'Programming Language :: Python :: 2.7',
-				'Programming Language :: Python :: 3.4',
-				'Programming Language :: Python :: 3.5',
 				'Programming Language :: Python :: 3.6',
 				'Programming Language :: Python :: 3.7',
 				'Programming Language :: Python :: 3.8',
-				'Topic :: Text Processing :: Markup :: HTML',
 				'Topic :: Software Development :: Libraries :: Python Modules',
 				]
 
@@ -54,7 +48,11 @@ author_email       = "dominic@davis-foster.co.uk"
 github_username	   = "domdfcoding"
 web                = github_url = f"https://github.com/{github_username}/{modname}"
 
-install_requires   = []
+install_requires   = ["beautifulsoup4>=4.7.1",
+					  "requests>=2.22.0",
+					  "requests-cache>=0.5.0",
+					  "cashier>=1.3",
+					 ]
 
 
 import os.path

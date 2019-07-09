@@ -18,7 +18,7 @@ setup(
        license            = license,
        long_description   = long_description,
        name               = modname,
-       packages           = find_packages(),
+       packages           = None,
        py_modules         = py_modules,
        url                = web,
        version            = VERSION)
