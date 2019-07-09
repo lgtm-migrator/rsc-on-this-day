@@ -23,6 +23,7 @@ rst_prolog = f""".. |pkgname| replace:: {modname}
 .. |ghurl| replace:: {github_url}
 """
 
+project = modname
 slug = re.sub(r'\W+', '-', modname.lower())
 version = __version__
 release = __version__
