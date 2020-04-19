@@ -3,6 +3,8 @@
 
 import pathlib
 import sys
+import warnings
+import os
 
 from setuptools import setup
 
@@ -12,9 +14,10 @@ from __pkginfo__ import (
 	)
 
 if not pathlib.Path("rsc_on_this_day.1").is_file():
-	sys.stderr.write("Error: manpage not found. Please build it with `./make_manpage.sh` and try again.\n")
-	sys.stderr.flush()
-	sys.exit(1)
+	warnings.warn("manpage not found. Trying to build now.")
+	exit_code = os.system("./make_manpage.sh")
+	if exit_code:
+		sys.exit(exit_code)
 
 setup(
 		author=author,
