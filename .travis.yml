@@ -12,6 +12,7 @@ script:
   - echo "skipping tests"
 before_deploy:
   - ./make_manpage.sh
+  - ls
 deploy:
   provider: pypi
   user: DomDF
