@@ -21,7 +21,7 @@ copyright = """
 2019 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 modname = "rsc_on_this_day"
 py_modules = [modname]
