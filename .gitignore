@@ -107,5 +107,7 @@ venv.bak/
 build
 *.egg-info
 */__pycache__
-.coverage
 cache.db
+
+# manpage
+rsc_on_this_day.1

@@ -50,15 +50,10 @@ from domdf_python_tools.dates import check_date, parse_month
 
 # TODO: Timeout
 
-
 # Create directory for cache
 cache_dir = pathlib.Path(appdirs.user_cache_dir("rsc_on_this_day"))
 if not cache_dir.exists():
 	cache_dir.mkdir(parents=True, exist_ok=True)
-
-# Keep cache for about a month
-requests_cache.install_cache(str(cache_dir / "requests_cache"), expire_after=2500000)
-requests_cache.remove_expired_responses()
 
 # Today's date
 today = datetime.date.today()
@@ -144,4 +139,9 @@ def main():
 
 
 if __name__ == "__main__":
+	# Set up requests_cache and keep cache for about a month
+	# We do this here so we don't interfere with programs that import from this program
+	requests_cache.install_cache(str(cache_dir / "requests_cache"), expire_after=2500000)
+	requests_cache.remove_expired_responses()
+	
 	main()

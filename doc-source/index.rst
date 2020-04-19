@@ -12,3 +12,4 @@
     docs
     Source
     Building
+    Manpage<manpage>

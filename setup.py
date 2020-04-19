@@ -1,18 +1,20 @@
 #!/usr/bin/env python
 """Setup script"""
 
-from __pkginfo__ import (
-	author, author_email, install_requires,
-	license, long_description, classifiers,
-	entry_points, modname, py_modules,
-	short_desc, VERSION, web,
-	)
+import pathlib
+import sys
 
 from setuptools import setup
 
-from build_manpages.build_manpages import build_manpages, get_build_py_cmd, get_install_cmd
-from setuptools.command.build_py import build_py
-from setuptools.command.install import install
+from __pkginfo__ import (
+	author, author_email, classifiers, entry_points, install_requires, license, long_description, modname, py_modules,
+	short_desc, VERSION, web,
+	)
+
+if not pathlib.Path("rsc_on_this_day.1").is_file():
+	sys.stderr.write("Error: manpage not found. Please build it with `./make_manpage.sh` and try again.\n")
+	sys.stderr.flush()
+	sys.exit(1)
 
 setup(
 		author=author,
@@ -29,3 +31,5 @@ setup(
 		url=web,
 		version=VERSION,
 		)
+
+# TODO: include manpage in wheel and put in right place on filesystem
