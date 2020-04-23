@@ -18,7 +18,7 @@
 import pathlib
 
 copyright = """
-2019 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+2019-2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
 VERSION = "0.2.3"
@@ -36,7 +36,14 @@ license = 'GPLv3'
 short_desc = 'Displays Royal Society of Chemistry "On This Day" fact'
 
 classifiers = [
-		'Development Status :: 3 - Alpha',
+		# "Development Status :: 1 - Planning",
+		# "Development Status :: 2 - Pre-Alpha",
+		"Development Status :: 3 - Alpha",
+		# "Development Status :: 4 - Beta",
+		# "Development Status :: 5 - Production/Stable",
+		# "Development Status :: 6 - Mature",
+		# "Development Status :: 7 - Inactive",
+		
 		'Intended Audience :: Developers',
 		'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
 		'Operating System :: OS Independent',

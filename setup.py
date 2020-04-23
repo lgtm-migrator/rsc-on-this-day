@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """Setup script"""
 
+import os
 import pathlib
 import sys
 import warnings
-import os
 
 from setuptools import setup
 
