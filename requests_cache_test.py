@@ -14,8 +14,10 @@ def perform_request():
 	"""Function to perform the request"""
 	r = requests.get(target_url, stream=True)
 	print(type(r.raw))
+	print(dir(r.raw))
 	with r.raw:
 		pass
+	return r
 
 
 print("\nRequest without cache")

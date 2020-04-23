@@ -34,12 +34,12 @@ terminal.
 		Default 80. Set to -1 to disable wrapping.
 
 	**--clear-cache**
-		Clears any cached data and exits.
+		Clear any cached data and exit.
+
+	**--version**
+		Show the version number and exit.
 
 If requesting a specific date both the month and day must be given.
-
-
-.. TODO: --version  output version information and exit
 
 
 Examples
@@ -69,14 +69,14 @@ Installation
 
 .. parsed-literal::
 
-        $ pip install |pkgname|
+	$ pip install |pkgname|
 
 
 Once installed, |pkgname2| can be run by typing:
 
 .. parsed-literal::
 
-        $ |pkgname|
+	$ |pkgname|
 
 If |pkgname2| is not installed in a directory in ``$PATH``, you may need to add ``~/.local/bin/`` to your ``$PATH``.
 

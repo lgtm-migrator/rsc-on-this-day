@@ -92,6 +92,11 @@ def clear_cache():
 	return 0
 
 
+def version():
+	print(__version__)
+	return 0
+
+
 def main():
 	import argparse
 	
@@ -105,12 +110,17 @@ def main():
 	
 	parser.add_argument(
 			'--clear-cache', dest="clear_cache", action="store_true", default=False,
-			help='Clears any cached data and exits.')
+			help='Clear any cached data and exit.')
+	parser.add_argument(
+			'--version', dest="version", action="store_true", default=False,
+			help='Show the version number and exit.')
 	
 	args = parser.parse_args()
 	
 	if args.clear_cache:
 		sys.exit(clear_cache())
+	elif args.version:
+		sys.exit(version())
 	
 	if (args.month and args.day is None) or (args.day and args.month is None):
 		parser.error(date_arg_error_str)

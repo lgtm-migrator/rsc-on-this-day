@@ -1,3 +1,4 @@
 include __pkginfo__.py
 include LICENSE
 include rsc_on_this_day.1
+include requirements.txt
