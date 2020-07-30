@@ -1,0 +1,12 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper
+---
+modname: 'rsc-on-this-da'
+copyright_years: '2019-2020'
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'domdfcoding'
+version: '0.2.3'
+license: 'GNU General Public License v3 (GPLv3)'
+short_desc: 'Displays Royal Society of Chemistry "On This Day" facts.'
+
+enable_conda: False
