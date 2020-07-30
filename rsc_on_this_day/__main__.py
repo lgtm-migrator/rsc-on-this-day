@@ -32,6 +32,8 @@ import sys
 
 # 3rd party
 import requests_cache  # type: ignore
+
+# this package
 from rsc_on_this_day import cache_dir, main
 
 if __name__ == "__main__":  # pragma: no cover

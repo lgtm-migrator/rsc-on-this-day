@@ -2,8 +2,11 @@
 Rudimentary test to ensure everything works without error.
 """
 
+# 3rd party
 import requests_cache  # type: ignore
-from rsc_on_this_day import main, cache_dir
+
+# this package
+from rsc_on_this_day import cache_dir, main
 
 
 def test_function():
