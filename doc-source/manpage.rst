@@ -97,4 +97,3 @@ Please use the GitHub issue tracker to report bugs: <`https://github.com/domdfco
 See Also
 -----------
 fortune(6)
-

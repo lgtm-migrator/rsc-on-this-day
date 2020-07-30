@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# stdlib
 import os
 import sys
 
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
+# this package
 from sphinx_shared import *
 
 version = f"{modname} {__version__}"
@@ -18,8 +20,6 @@ copyright = (
 		)
 
 master_doc = 'manpage'
-man_pages = [
-		('manpage', slug, modname, [author], 1)
-		]
+man_pages = [('manpage', slug, modname, [author], 1)]
 
 # All other settings are in `sphinx_shared`

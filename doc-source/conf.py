@@ -18,20 +18,20 @@ from __pkginfo__ import __version__
 # User-configurable lines
 # End of user-configurable lines
 
-github_url = "https://github.com/domdfcoding/rsc-on-this-da"
+github_url = "https://github.com/domdfcoding/rsc-on-this-day"
 
-rst_prolog = f""".. |pkgname| replace:: rsc-on-this-da
-.. |pkgname2| replace:: ``rsc-on-this-da``
+rst_prolog = f""".. |pkgname| replace:: rsc-on-this-day
+.. |pkgname2| replace:: ``rsc-on-this-day``
 .. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
 """
 
 author = "Dominic Davis-Foster"
-project = "rsc-on-this-da"
+project = "rsc-on-this-day"
 slug = re.sub(r'\W+', '-', project.lower())
 release = version = __version__
 copyright = "2019-2020 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
 language = 'en'
-package_root = "rsc_on_this_da"
+package_root = "rsc_on_this_day"
 
 extensions = [
 		'sphinx.ext.intersphinx',
@@ -92,7 +92,7 @@ html_show_sourcelink = True  # True will show link to source
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
-		'github_repo': 'rsc-on-this-da',
+		'github_repo': 'rsc-on-this-day',
 		'github_version': 'master',
 		'conf_py_path': '/doc-source/',
 		}

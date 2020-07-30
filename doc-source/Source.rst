@@ -2,15 +2,15 @@
 Downloading source code
 =========================
 
-The ``rsc-on-this-da`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/rsc-on-this-da"
+The ``rsc-on-this-day`` source code is available on GitHub,
+and can be accessed from the following URL: https://github.com/domdfcoding/rsc-on-this-day"
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/domdfcoding/rsc-on-this-da"
-    > Cloning into 'rsc-on-this-da'...
+    $ git clone https://github.com/domdfcoding/rsc-on-this-day"
+    > Cloning into 'rsc-on-this-day'...
     > remote: Enumerating objects: 47, done.
     > remote: Counting objects: 100% (47/47), done.
     > remote: Compressing objects: 100% (41/41), done.
@@ -30,7 +30,7 @@ If you have ``git`` installed, you can clone the repository with the following c
 Building from source
 -----------------------
 
-The recommended way to build ``rsc-on-this-da`` is to use `tox <https://tox.readthedocs.io/en/latest/>`_:
+The recommended way to build ``rsc-on-this-day`` is to use `tox <https://tox.readthedocs.io/en/latest/>`_:
 
 .. prompt:: bash
 

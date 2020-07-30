@@ -1,5 +1,7 @@
+# stdlib
 import os
 
+# 3rd party
 import requests
 import requests_cache
 
