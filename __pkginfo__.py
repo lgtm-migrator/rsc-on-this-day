@@ -1,69 +1,62 @@
-# Copyright (C) 2019-2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  This file is managed by 'repo_helper'. Don't edit it directly.
+#  Copyright (C) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, either version 3 of the License, or
-#  (at your option) any later version.
+#  This file is distributed under the same license terms as the program it came with.
+#  There will probably be a file called LICEN[S/C]E in the same directory as this file.
 #
-#  This program is distributed in the hope that it will be useful,
+#  In any case, this program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-#  You should have received a copy of the GNU General Public License
-#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 # This script based on https://github.com/rocky/python-uncompyle6/blob/master/__pkginfo__.py
+#
 
+# stdlib
 import pathlib
 
-copyright = """
+__all__ = [
+		"__copyright__",
+		"__version__",
+		"modname",
+		"pypi_name",
+		"__license__",
+		"__author__",
+		"short_desc",
+		"author",
+		"author_email",
+		"github_username",
+		"web",
+		"github_url",
+		"repo_root",
+		"install_requires",
+		"extras_require",
+		"project_urls",
+
+		"import_name",
+		]
+
+__copyright__ = """
 2019-2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-VERSION = "0.2.3"
-
-modname = "rsc_on_this_day"
-py_modules = [modname]
-entry_points = {
-		'console_scripts': [
-				f'rsc_on_this_day=rsc_on_this_day:main',
-				]
-		}
-
-license = 'GPLv3'
-
-short_desc = 'Displays Royal Society of Chemistry "On This Day" fact'
-
-classifiers = [
-		# "Development Status :: 1 - Planning",
-		# "Development Status :: 2 - Pre-Alpha",
-		"Development Status :: 3 - Alpha",
-		# "Development Status :: 4 - Beta",
-		# "Development Status :: 5 - Production/Stable",
-		# "Development Status :: 6 - Mature",
-		# "Development Status :: 7 - Inactive",
-		
-		'Intended Audience :: Developers',
-		'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-		'Operating System :: OS Independent',
-		'Programming Language :: Python',
-		'Programming Language :: Python :: 3.6',
-		'Programming Language :: Python :: 3.7',
-		'Programming Language :: Python :: 3.8',
-		'Topic :: Software Development :: Libraries :: Python Modules',
-		]
-
-author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+__version__ = "0.2.3"
+modname = "rsc-on-this-day"
+pypi_name = "rsc-on-this-day"
+import_name = "rsc_on_this_day"
+__license__ = "GNU General Public License v3 (GPLv3)"
+short_desc = 'Displays Royal Society of Chemistry "On This Day" facts.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
-web = github_url = f"https://github.com/{github_username}/{modname}"
+web = github_url = "https://github.com/domdfcoding/rsc-on-this-day"
+repo_root = pathlib.Path(__file__).parent
+install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
+extras_require = {'all': []}
 
 
-# Get info from files; set: long_description
-if pathlib.Path.cwd().name in {"doc-source", "manpage-builder"}:
-	install_requires = (pathlib.Path.cwd().parent / "requirements.txt").read_text().split("\n")
-	long_description = (pathlib.Path.cwd().parent / "README.rst").read_text() + '\n'
-else:
-	install_requires = pathlib.Path("requirements.txt").read_text().split("\n")
-	long_description = pathlib.Path("README.rst").read_text() + '\n'
+
+project_urls = {
+		"Documentation": "https://rsc-on-this-day.readthedocs.io",
+		"Issue Tracker": f"{github_url}/issues",
+		"Source Code": github_url,
+		}
