@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: domdfcoding/octocheese@master
         with:
-          pypi_name: "rsc-on-this-day"
+          pypi_name: "rsc_on_this_day"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

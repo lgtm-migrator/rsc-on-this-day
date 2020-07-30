@@ -2,6 +2,7 @@
 requires = [
 	"setuptools >= 40.6.0",
     "wheel >= 0.34.2",
-
+    "domdf_python_tools",
+    "sphinx>=3.0.3",
     ]
 build-backend = "setuptools.build_meta"
