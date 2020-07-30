@@ -1,17 +1,18 @@
 #!/usr/bin/env python
-"""Setup script"""
 
+# stdlib
 import os
 import pathlib
 import sys
 import warnings
 
+# 3rd party
 from setuptools import setup
 
-from __pkginfo__ import (
-	author, author_email, classifiers, entry_points, install_requires, license, long_description, modname, py_modules,
-	short_desc, VERSION, web,
-	)
+sys.path.append('.')
+
+# this package
+from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 if not pathlib.Path("rsc_on_this_day.1").is_file():
 	warnings.warn("manpage not found. Trying to build now.")
@@ -20,19 +21,11 @@ if not pathlib.Path("rsc_on_this_day.1").is_file():
 		sys.exit(exit_code)
 
 setup(
-		author=author,
-		author_email=author_email,
-		classifiers=classifiers,
-		description=short_desc,
-		entry_points=entry_points,
+		description='Displays Royal Society of Chemistry "On This Day" facts.',
+		extras_require=extras_require,
 		install_requires=install_requires,
-		license=license,
-		long_description=long_description,
-		name=modname,
-		packages=None,
-		py_modules=py_modules,
-		url=web,
-		version=VERSION,
+		py_modules=[],
+		version=__version__,
 		)
 
 # TODO: include manpage in wheel and put in right place on filesystem
