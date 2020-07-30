@@ -64,30 +64,30 @@ rsc_on_this_day October 13 --width 80
 Installation
 -------------
 
-|pkgname2| can be installed with pip:
+``rsc_on_this_day`` can be installed with pip:
 
 
 .. parsed-literal::
 
-	$ pip install |pkgname|
+	$ pip install rsc_on_this_day
 
 
-Once installed, |pkgname2| can be run by typing:
+Once installed, ``rsc_on_this_day`` can be run by typing:
 
 .. parsed-literal::
 
-	$ |pkgname|
+	$ rsc_on_this_day
 
-If |pkgname2| is not installed in a directory in ``$PATH``, you may need to add ``~/.local/bin/`` to your ``$PATH``.
+If ``rsc_on_this_day`` is not installed in a directory in ``$PATH``, you may need to add ``~/.local/bin/`` to your ``$PATH``.
 
-Adding to ``~/bashrc``
+Adding to ``~/.bashrc``
 -----------------------
 
-|pkgname2| can be run every time you open a terminal by adding |pkgname2| to your ``~/bashrc`` file. For example:
+``rsc_on_this_day`` can be run every time you open a terminal by adding ``rsc_on_this_day`` to your ``~/.bashrc`` file. For example:
 
 .. parsed-literal::
 
-    $ echo "|pkgname|" >> ~/.bashrc
+	$ echo "rsc_on_this_day" >> ~/.bashrc
 
 Reporting Bugs
 ---------------

@@ -6,15 +6,4 @@
 
 .. automodule:: rsc_on_this_day
     :members:
-    :private-members:
-    :special-members:
-
-===================================
-:mod:`rsc_on_this_day`
-===================================
-
-
-.. automodule:: rsc_on_this_day
-    :members:
-    :private-members:
-    :special-members:
+    :undoc-members:
