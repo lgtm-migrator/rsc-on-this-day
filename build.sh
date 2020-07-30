@@ -20,6 +20,3 @@ python3 setup.py sdist bdist_wheel
 # deactivate venv and delete
 deactivate
 rm -rf ./build-venv
-
-
-

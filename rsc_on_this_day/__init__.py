@@ -66,22 +66,23 @@ date_arg_error_str = "If requesting a specific date both the month and day must 
 def get_fact(month=None, day=None):
 	if (month and not day) or (day and not month):
 		raise SyntaxError(date_arg_error_str)
-	
+
 	if not month and not day:
 		month = today.strftime("%B")
 		day = today.day
-	
+
 	date = f"{month}-{day}"
-	
+
 	page = requests.get(
 			f"https://web.archive.org/web/20190331053029id_/"
-			f"http://www.rsc.org/learn-chemistry/collections/chemistry-calendar/{date}")
-	
+			f"http://www.rsc.org/learn-chemistry/collections/chemistry-calendar/{date}"
+			)
+
 	soup = BeautifulSoup(page.content, "html.parser")
-	
+
 	header = soup.find("div", {"class": "description"}).previousSibling.previousSibling.get_text().strip()
 	body = soup.find("div", {"class": "description"}).get_text().strip()
-	
+
 	return header, body
 
 
@@ -98,51 +99,66 @@ def version():
 
 
 def main():
+	# stdlib
 	import argparse
-	
+
 	parser = argparse.ArgumentParser(description=__doc__, epilog=date_arg_error_str)
 	shared_kwargs = dict(default=None, nargs="?")
 	parser.add_argument('month', **shared_kwargs, help='The name or number of the month of the fact to display.')
 	parser.add_argument('day', type=int, **shared_kwargs, help='The day number of the fact to display.')
 	parser.add_argument(
-			"-w", '--width', metavar="WIDTH", type=int, default=80, nargs="?",
-			help='The number of characters per line of the output. Default 80. Set to -1 to disable wrapping.')
-	
+			"-w",
+			'--width',
+			metavar="WIDTH",
+			type=int,
+			default=80,
+			nargs="?",
+			help='The number of characters per line of the output. Default 80. Set to -1 to disable wrapping.'
+			)
+
 	parser.add_argument(
-			'--clear-cache', dest="clear_cache", action="store_true", default=False,
-			help='Clear any cached data and exit.')
+			'--clear-cache',
+			dest="clear_cache",
+			action="store_true",
+			default=False,
+			help='Clear any cached data and exit.'
+			)
 	parser.add_argument(
-			'--version', dest="version", action="store_true", default=False,
-			help='Show the version number and exit.')
-	
+			'--version',
+			dest="version",
+			action="store_true",
+			default=False,
+			help='Show the version number and exit.'
+			)
+
 	args = parser.parse_args()
-	
+
 	if args.clear_cache:
 		sys.exit(clear_cache())
 	elif args.version:
 		sys.exit(version())
-	
+
 	if (args.month and args.day is None) or (args.day and args.month is None):
 		parser.error(date_arg_error_str)
-	
+
 	month = args.month
-	
+
 	if month is not None and args.day is not None:
 		try:
 			month = parse_month(month)
 		except ValueError:
 			parser.error(f"Invalid value for month: {month}")
-		
+
 		# Check that the date is valid
 		if not check_date(month, args.day):
 			parser.error(f"{args.day}/{month} is not a valid date.")
-	
+
 	header, body = get_fact(month, args.day)
-	
+
 	if args.width > 0:
 		header = textwrap.fill(header, args.width)
 		body = textwrap.fill(body, args.width)
-	
+
 	# print(f"{args.day}/{month}")
 	print(header)
 	print(body)
@@ -153,5 +169,5 @@ if __name__ == "__main__":
 	# We do this here so we don't interfere with programs that import from this program
 	requests_cache.install_cache(str(cache_dir / "requests_cache"), expire_after=2500000)
 	requests_cache.remove_expired_responses()
-	
+
 	main()
