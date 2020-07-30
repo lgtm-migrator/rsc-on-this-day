@@ -25,6 +25,7 @@ Code shared by doc-source/conf.py and manpage-source/conf.py
 #
 #
 
+# stdlib
 import os
 import re
 import sys
@@ -32,25 +33,42 @@ import sys
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
+# 3rd party
 from sphinx.locale import _
 
+# this package
+from __pkginfo__ import github_url, github_username, modname
 # Might as well consolidate imports here
-from rsc_on_this_day import __author__, __version__, __copyright__
-from __pkginfo__ import github_username, modname, github_url
+from rsc_on_this_day import __author__, __copyright__, __version__
 
 __all__ = [
-		"__author__", "__version__", "__copyright__",
-		"github_username", "modname", "github_url",
+		"__author__",
+		"__version__",
+		"__copyright__",
+		"github_username",
+		"modname",
+		"github_url",
 		"rst_prolog",
-		"project", "slug", "release", "author", "language",
+		"project",
+		"slug",
+		"release",
+		"author",
+		"language",
 		"extensions",
-		"templates_path", "source_suffix", "exclude_patterns",
-		"suppress_warnings", "pygments_style",
+		"templates_path",
+		"source_suffix",
+		"exclude_patterns",
+		"suppress_warnings",
+		"pygments_style",
 		"intersphinx_mapping",
-		"html_theme", "html_theme_options", "html_theme_path", "html_show_sourcelink",  # "html_logo",
+		"html_theme",
+		"html_theme_options",
+		"html_theme_path",
+		"html_show_sourcelink",  # "html_logo",
 		"html_context",
 		"htmlhelp_basename",
-		"latex_documents", "texinfo_documents",
+		"latex_documents",
+		"texinfo_documents",
 		"setup"
 		]
 
@@ -106,7 +124,7 @@ html_context = {
 htmlhelp_basename = slug
 
 latex_documents = [
-		('index', '{0}.tex'.format(slug), modname, author, 'manual'),
+		('index', f'{slug}.tex', modname, author, 'manual'),
 		]
 
 texinfo_documents = [
@@ -116,27 +134,22 @@ texinfo_documents = [
 
 # Extensions to theme docs
 def setup(app):
+	# 3rd party
 	from sphinx.domains.python import PyField
 	from sphinx.util.docfields import Field
-	
+
 	app.add_object_type(
 			'confval',
 			'confval',
 			objname='configuration value',
 			indextemplate='pair: %s; configuration value',
 			doc_field_types=[
-					PyField(
-							'type',
-							label=_('Type'),
-							has_arg=False,
-							names=('type',),
-							bodyrolename='class'
-							),
+					PyField('type', label=_('Type'), has_arg=False, names=('type', ), bodyrolename='class'),
 					Field(
 							'default',
 							label=_('Default'),
 							has_arg=False,
-							names=('default',),
+							names=('default', ),
 							),
 					]
 			)

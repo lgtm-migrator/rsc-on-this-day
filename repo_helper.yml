@@ -10,7 +10,6 @@ license: 'GPLv3'
 short_desc: 'Displays Royal Society of Chemistry "On This Day" facts.'
 
 enable_conda: False
-enable_tests: False
 
 additional_ignore:
   - cache.db
@@ -21,3 +20,16 @@ exclude_files:
   - setup
 
 travis_pypi_secure: "niA3eF/QMLKJqMMbc3OsgLpn8PvqJXzZog//vOqZVZ1vAKcbTnjE/ATuxjRjnX9znedEPhtzZvxb7rUqqNhmRsQ9+TbZ9yWEbM2eY1XZr33VbvFUuIVmcjpF956Fs5wFHIig237cVWC/hryIgAV3k+rOqoDksoVCdViQuzKJo92vT9UqyIuR+8YLyR8+xaVzZ4V2w3JfgegUUa/UtBUylt3+xSnPFCWgR23os5W1lMhn/ACsQXX5iIeUna39MIok+RVrmvSNDRTUTiTNJ2lxJwZG5EIpdhqp1T+DWzxIFQsiY0Hs/+8HtQOFTQVlQvLFzw2hoJvud5Dpw4v0pqO46djv2aRz/34FCTy1Ee3xAv9RP4uiyTpxI6DNJ9jY2vr0pysBkJaelvTNdENVhUqIohpR8d64qiMXYuGTzm9LAPSIZPKxaHjh1WnzEjYmM3dKDKIvgSVoF2qgRPuR2vWApJvLjKTsmVv3RNjGo2URHFjyXC1VtGrwU5yCJw53RQHpx0wj/bkhz0Bb7fYy172degPctcCnmy8+gHE2x83csQJwNRRZ1yb/CKKfJzq1+QlANVZmqTlYj1nPODBXsgedkNqNZzwt181DFqy7u/mLCo4ygQdPNwOMYA6oObZIOfrINPKGQpPcs+Y1jpFgNJeblaEFEqO3vJUotKXE5gm3hbw="
+
+manifest_additional:
+  - include rsc_on_this_day.1
+
+python_versions:
+  - '3.6'
+  - '3.7'
+  - "3.8"
+  - "pypy3"
+  - "3.9-dev"
+
+console_scripts:
+  - rsc_on_this_day=rsc_on_this_day:main
