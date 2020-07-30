@@ -27,13 +27,6 @@ Displays Royal Society of Chemistry "On This Day In Chemistry" facts in your ter
 #
 #
 
-__author__ = "Dominic Davis-Foster"
-__copyright__ = "2019-2020 Dominic Davis-Foster"
-
-__license__ = "GPLv3"
-__version__ = "0.2.3"
-__email__ = "dominic@davis-foster.co.uk"
-
 # stdlib
 import datetime
 import pathlib
@@ -41,12 +34,19 @@ import sys
 import textwrap
 
 # 3rd party
-import appdirs
+import appdirs  # type: ignore
 import requests
-import requests_cache
-from bs4 import BeautifulSoup
-from cachier import cachier
+import requests_cache  # type: ignore
+from bs4 import BeautifulSoup  # type: ignore
+from cachier import cachier  # type: ignore
 from domdf_python_tools.dates import check_date, parse_month
+
+__author__ = "Dominic Davis-Foster"
+__copyright__ = "2019-2020 Dominic Davis-Foster"
+
+__license__ = "GPLv3"
+__version__ = "0.2.3"
+__email__ = "dominic@davis-foster.co.uk"
 
 # TODO: Timeout
 
@@ -98,7 +98,7 @@ def version():
 	return 0
 
 
-def main():
+def main(argv):
 	# stdlib
 	import argparse
 
@@ -131,7 +131,7 @@ def main():
 			help='Show the version number and exit.'
 			)
 
-	args = parser.parse_args()
+	args = parser.parse_args(argv)
 
 	if args.clear_cache:
 		sys.exit(clear_cache())
@@ -164,10 +164,10 @@ def main():
 	print(body)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
 	# Set up requests_cache and keep cache for about a month
 	# We do this here so we don't interfere with programs that import from this program
 	requests_cache.install_cache(str(cache_dir / "requests_cache"), expire_after=2500000)
 	requests_cache.remove_expired_responses()
 
-	main()
+	main(sys.argv[1:])
