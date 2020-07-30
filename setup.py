@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 
 # stdlib
+import locale
 import os
 import pathlib
 import sys
 import warnings
 
 # 3rd party
+import sphinx.locale
+from domdf_python_tools.paths import copytree
 from setuptools import setup
+from sphinx import package_dir
+from sphinx.cmd import make_mode
 
 sys.path.append('.')
 
@@ -16,25 +21,10 @@ from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 if not pathlib.Path("rsc_on_this_day.1").is_file():
 	warnings.warn("manpage not found. Trying to build now.")
-
-	import locale
-	import os
-	import sys
-
-	import sphinx.locale
-	from sphinx import package_dir
-	from sphinx.cmd import make_mode
-	from domdf_python_tools.paths import copytree
-
 	sphinx.locale.setlocale(locale.LC_ALL, '')
 	sphinx.locale.init_console(os.path.join(package_dir, 'locale'), 'sphinx')
 	make_mode.run_make_mode(["man", "manpage-builder", "manpage-builder/build"])
 	copytree("manpage-builder/build/man", ".")
-
-
-	exit_code = os.system("./make_manpage.sh")
-	if exit_code:
-		sys.exit(exit_code)
 
 setup(
 		description='Displays Royal Society of Chemistry "On This Day" facts.',
