@@ -27,36 +27,36 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/rsc_on_this_day/latest?logo=read-the-docs
-	:target: https://rsc_on_this_day.readthedocs.io/en/latest/?badge=latest
+.. |docs| image:: https://img.shields.io/readthedocs/rsc-on-this-day/latest?logo=read-the-docs
+	:target: https://rsc-on-this-day.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/rsc_on_this_day/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/rsc_on_this_day/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Docs%20Check/badge.svg
+	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/rsc_on_this_day/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/rsc_on_this_day
+.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/rsc-on-this-day/master?logo=travis
+	:target: https://travis-ci.com/domdfcoding/rsc-on-this-day
 	:alt: Travis Build Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/rsc_on_this_day/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/rsc_on_this_day/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Windows%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Windows+Tests%22
 	:alt: Windows Tests Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/rsc_on_this_day/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/rsc_on_this_day/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/macOS%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22macOS+Tests%22
 	:alt: macOS Tests Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/rsc_on_this_day/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/rsc_on_this_day/requirements/?branch=master
+.. |requires| image:: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements.svg?branch=master
+	:target: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/rsc_on_this_day/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/rsc_on_this_day?branch=master
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/rsc-on-this-day/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/rsc-on-this-day?branch=master
 	:alt: Coverage
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/rsc_on_this_day?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/rsc_on_this_day
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/rsc-on-this-day?logo=codefactor
+	:target: https://www.codefactor.io/repository/github/domdfcoding/rsc-on-this-day
 	:alt: CodeFactor Grade
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/rsc_on_this_day
@@ -75,19 +75,19 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	:target: https://pypi.org/project/rsc_on_this_day/
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/rsc_on_this_day
-	:target: https://github.com/domdfcoding/rsc_on_this_day/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/github/license/domdfcoding/rsc-on-this-day
+	:target: https://github.com/domdfcoding/rsc-on-this-day/blob/master/LICENSE
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/rsc_on_this_day
+.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/rsc-on-this-day
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/rsc_on_this_day/v0.2.3
-	:target: https://github.com/domdfcoding/rsc_on_this_day/pulse
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/rsc-on-this-day/v0.2.3
+	:target: https://github.com/domdfcoding/rsc-on-this-day/pulse
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/rsc_on_this_day
-	:target: https://github.com/domdfcoding/rsc_on_this_day/commit/master
+.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/rsc-on-this-day
+	:target: https://github.com/domdfcoding/rsc-on-this-day/commit/master
 	:alt: GitHub last commit
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020

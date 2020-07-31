@@ -1,6 +1,7 @@
 # Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper
 ---
 modname: 'rsc_on_this_day'
+repo_name: 'rsc-on-this-day'
 copyright_years: '2019-2020'
 author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'

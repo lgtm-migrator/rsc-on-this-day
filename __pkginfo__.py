@@ -48,7 +48,7 @@ short_desc = 'Displays Royal Society of Chemistry "On This Day" facts.'
 __author__ = author = 'Dominic Davis-Foster'
 author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
-web = github_url = "https://github.com/domdfcoding/rsc_on_this_day"
+web = github_url = "https://github.com/domdfcoding/rsc-on-this-day"
 repo_root = pathlib.Path(__file__).parent
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
 extras_require = {'all': []}
@@ -56,7 +56,7 @@ extras_require = {'all': []}
 
 
 project_urls = {
-		"Documentation": "https://rsc_on_this_day.readthedocs.io",
+		"Documentation": "https://rsc-on-this-day.readthedocs.io",
 		"Issue Tracker": f"{github_url}/issues",
 		"Source Code": github_url,
 		}

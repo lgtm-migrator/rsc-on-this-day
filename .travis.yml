@@ -36,7 +36,7 @@ jobs:
       deploy:
         on:
           tags: true
-          repo: domdfcoding/rsc_on_this_day
+          repo: domdfcoding/rsc-on-this-day
         provider: pypi
         user: "DomDF"
         password:

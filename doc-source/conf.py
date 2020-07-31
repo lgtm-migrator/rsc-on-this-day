@@ -18,7 +18,7 @@ from __pkginfo__ import __version__
 # User-configurable lines
 # End of user-configurable lines
 
-github_url = "https://github.com/domdfcoding/rsc_on_this_day"
+github_url = "https://github.com/domdfcoding/rsc-on-this-day"
 
 rst_prolog = f""".. |pkgname| replace:: rsc_on_this_day
 .. |pkgname2| replace:: ``rsc_on_this_day``
@@ -92,7 +92,7 @@ html_show_sourcelink = True  # True will show link to source
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
-		'github_repo': 'rsc_on_this_day',
+		'github_repo': 'rsc-on-this-day',
 		'github_version': 'master',
 		'conf_py_path': '/doc-source/',
 		}
