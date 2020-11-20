@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``rsc_on_this_day`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/rsc-on-this-day"
+and can be accessed from the following URL: https://github.com/domdfcoding/rsc-on-this-day
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
