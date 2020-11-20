@@ -19,7 +19,7 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -29,23 +29,23 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 
 .. |docs| image:: https://img.shields.io/readthedocs/rsc-on-this-day/latest?logo=read-the-docs
 	:target: https://rsc-on-this-day.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/rsc-on-this-day/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/rsc-on-this-day
-	:alt: Travis Build Status
+.. |travis| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Linux%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%Linux+Tests%22
+	:alt: Linux Test Status
 
 .. |actions_windows| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Windows%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Windows+Tests%22
-	:alt: Windows Tests Status
+	:alt: Windows Test Status
 
 .. |actions_macos| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/macOS%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22macOS+Tests%22
-	:alt: macOS Tests Status
+	:alt: macOS Test Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements/?branch=master
@@ -96,6 +96,10 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 .. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/rsc-on-this-day/master.svg
+	:target: https://results.pre-commit.ci/latest/github/domdfcoding/rsc-on-this-day/master
+	:alt: pre-commit.ci status
 
 .. end shields
 

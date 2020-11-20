@@ -19,7 +19,7 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -27,75 +27,79 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/rsc-on-this-day/latest?logo=read-the-docs
-	:target: https://rsc-on-this-day.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+.. |docs| rtfd-shield::
+	:project: rsc-on-this-day
+	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| actions-shield::
+	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/rsc-on-this-day/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/rsc-on-this-day
-	:alt: Travis Build Status
+.. |travis| actions-shield::
+	:workflow: Linux Tests
+	:alt: Linux Test Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22Windows+Tests%22
-	:alt: Windows Tests Status
+.. |actions_windows| actions-shield::
+	:workflow: Windows Tests
+	:alt: Windows Test Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/rsc-on-this-day/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22macOS+Tests%22
-	:alt: macOS Tests Status
+.. |actions_macos| actions-shield::
+	:workflow: macOS Tests
+	:alt: macOS Test Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/rsc-on-this-day/requirements/?branch=master
+.. |requires| requires-io-shield::
 	:alt: Requirements Status
 
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/rsc-on-this-day/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/rsc-on-this-day?branch=master
+.. |coveralls| coveralls-shield::
 	:alt: Coverage
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/rsc-on-this-day?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/rsc-on-this-day
+.. |codefactor| codefactor-shield::
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/rsc_on_this_day
-	:target: https://pypi.org/project/rsc_on_this_day/
+.. |pypi-version| pypi-shield::
+	:project: rsc_on_this_day
+	:version:
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/rsc_on_this_day?logo=python&logoColor=white
-	:target: https://pypi.org/project/rsc_on_this_day/
+.. |supported-versions| pypi-shield::
+	:project: rsc_on_this_day
+	:py-versions:
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/rsc_on_this_day
-	:target: https://pypi.org/project/rsc_on_this_day/
+.. |supported-implementations| pypi-shield::
+	:project: rsc_on_this_day
+	:implementations:
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/rsc_on_this_day
-	:target: https://pypi.org/project/rsc_on_this_day/
+.. |wheel| pypi-shield::
+	:project: rsc_on_this_day
+	:wheel:
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/rsc-on-this-day
-	:target: https://github.com/domdfcoding/rsc-on-this-day/blob/master/LICENSE
+.. |license| github-shield::
+	:license:
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/rsc-on-this-day
+.. |language| github-shield::
+	:top-language:
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/rsc-on-this-day/v0.2.3
-	:target: https://github.com/domdfcoding/rsc-on-this-day/pulse
+.. |commits-since| github-shield::
+	:commits-since: v0.2.3
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/rsc-on-this-day
-	:target: https://github.com/domdfcoding/rsc-on-this-day/commit/master
+.. |commits-latest| github-shield::
+	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| maintained-shield:: 2020
 	:alt: Maintenance
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
+.. |pre_commit| pre-commit-shield::
 	:alt: pre-commit
+
+.. |pre_commit_ci| pre-commit-ci-shield::
+	:alt: pre-commit.ci status
 
 .. end shields
 
@@ -105,20 +109,9 @@ Installation
 
 .. start installation
 
-.. tabs::
-
-	.. tab:: from PyPI
-
-		.. prompt:: bash
-
-			python3 -m pip install rsc_on_this_day --user
-
-
-	.. tab:: from GitHub
-
-		.. prompt:: bash
-
-			python3 -m pip install git+https://github.com/domdfcoding/rsc-on-this-day@master --user
+.. installation:: rsc_on_this_day
+	:pypi:
+	:github:
 
 .. end installation
 
