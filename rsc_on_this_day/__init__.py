@@ -40,14 +40,13 @@ from bs4 import BeautifulSoup  # type: ignore
 from cachier import cachier  # type: ignore
 from domdf_python_tools.dates import check_date, parse_month
 
-__all__ = ["clear_cache", "get_fact", "main", "version"]
-
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2019-2020 Dominic Davis-Foster"
-
 __license__ = "GPLv3"
 __version__ = "0.2.3"
 __email__ = "dominic@davis-foster.co.uk"
+
+__all__ = ["clear_cache", "get_fact", "main", "version"]
 
 # TODO: Timeout
 
@@ -104,9 +103,19 @@ def main(argv):
 	import argparse
 
 	parser = argparse.ArgumentParser(description=__doc__, epilog=date_arg_error_str)
-	shared_kwargs = dict(default=None, nargs='?')
-	parser.add_argument("month", **shared_kwargs, help="The name or number of the month of the fact to display.")
-	parser.add_argument("day", type=int, **shared_kwargs, help="The day number of the fact to display.")
+	parser.add_argument(
+			"month",
+			default=None,
+			nargs='?',
+			help="The name or number of the month of the fact to display.",
+			)
+	parser.add_argument(
+			"day",
+			type=int,
+			default=None,
+			nargs='?',
+			help="The day number of the fact to display.",
+			)
 	parser.add_argument(
 			"-w",
 			"--width",
