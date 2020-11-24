@@ -33,6 +33,24 @@ python_versions:
 console_scripts:
   - rsc_on_this_day=rsc_on_this_day:main
 
-tox_build_requirements:
-  - domdf_python_tools
-  - sphinx>=3.0.3
+#tox_build_requirements:
+#  - domdf_python_tools
+#  - sphinx>=3.0.3
+
+#setup_pre:
+#  - import os
+#  - import locale
+#  - import pathlib
+#  - import warnings
+#  - import sphinx.locale
+#  - from domdf_python_tools.paths import copytree
+#  - from sphinx import package_dir
+#  - from sphinx.cmd import make_mode
+#  - "if not pathlib.Path('rsc_on_this_day.1').is_file():"
+#  - "  warnings.warn('manpage not found. Trying to build now.')"
+#  - "  sphinx.locale.setlocale(locale.LC_ALL, '')"
+#  - "  sphinx.locale.init_console(os.path.join(package_dir, 'locale'), 'sphinx')"
+#  - "  make_mode.run_make_mode(['man', 'manpage-builder', 'manpage-builder/build'])"
+#  - "  copytree('manpage-builder/build/man', '.')"
+
+# TODO: include manpage in wheel and put in right place on filesystem
