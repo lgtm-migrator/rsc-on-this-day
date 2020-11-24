@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  rsc_on_this_day.py
 """
@@ -40,6 +39,8 @@ import requests_cache  # type: ignore
 from bs4 import BeautifulSoup  # type: ignore
 from cachier import cachier  # type: ignore
 from domdf_python_tools.dates import check_date, parse_month
+
+__all__ = ["clear_cache", "get_fact", "main", "version"]
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2019-2020 Dominic Davis-Foster"
@@ -103,32 +104,32 @@ def main(argv):
 	import argparse
 
 	parser = argparse.ArgumentParser(description=__doc__, epilog=date_arg_error_str)
-	shared_kwargs = dict(default=None, nargs="?")
-	parser.add_argument('month', **shared_kwargs, help='The name or number of the month of the fact to display.')
-	parser.add_argument('day', type=int, **shared_kwargs, help='The day number of the fact to display.')
+	shared_kwargs = dict(default=None, nargs='?')
+	parser.add_argument("month", **shared_kwargs, help="The name or number of the month of the fact to display.")
+	parser.add_argument("day", type=int, **shared_kwargs, help="The day number of the fact to display.")
 	parser.add_argument(
 			"-w",
-			'--width',
+			"--width",
 			metavar="WIDTH",
 			type=int,
 			default=80,
-			nargs="?",
-			help='The number of characters per line of the output. Default 80. Set to -1 to disable wrapping.'
+			nargs='?',
+			help="The number of characters per line of the output. Default 80. Set to -1 to disable wrapping."
 			)
 
 	parser.add_argument(
-			'--clear-cache',
+			"--clear-cache",
 			dest="clear_cache",
 			action="store_true",
 			default=False,
-			help='Clear any cached data and exit.'
+			help="Clear any cached data and exit."
 			)
 	parser.add_argument(
-			'--version',
+			"--version",
 			dest="version",
 			action="store_true",
 			default=False,
-			help='Show the version number and exit.'
+			help="Show the version number and exit."
 			)
 
 	args = parser.parse_args(argv)

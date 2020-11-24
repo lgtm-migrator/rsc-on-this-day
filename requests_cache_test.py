@@ -13,7 +13,7 @@ target_url = "http://wikipedia.org"
 
 
 def perform_request():
-	"""Function to perform the request"""
+	"Function to perform the request"
 	r = requests.get(target_url, stream=True)
 	print(type(r.raw))
 	print(dir(r.raw))

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 # stdlib
 import os
@@ -7,7 +6,7 @@ import re
 import sys
 
 sys.path.append(os.path.abspath('.'))
-sys.path.append(os.path.abspath('..'))
+sys.path.append(os.path.abspath(".."))
 
 # this package
 from __pkginfo__ import __author__, __copyright__, __version__, modname
@@ -16,13 +15,13 @@ project = modname
 slug = re.sub(r'\W+', '-', modname.lower())
 release = __version__
 author = __author__
-language = 'en'
+language = "en"
 
-source_suffix = '.rst'
+source_suffix = ".rst"
 exclude_patterns = []
 
-suppress_warnings = ['image.nonlocal_uri']
-pygments_style = 'default'
+suppress_warnings = ["image.nonlocal_uri"]
+pygments_style = "default"
 
 version = f"{modname} {__version__}"
 copyright = (
@@ -32,5 +31,5 @@ copyright = (
 		"There is NO WARRANTY, to the extent permitted by law."
 		)
 
-master_doc = 'manpage'
-man_pages = [('manpage', slug, modname, [author], 1)]
+master_doc = "manpage"
+man_pages = [("manpage", slug, modname, [author], 1)]

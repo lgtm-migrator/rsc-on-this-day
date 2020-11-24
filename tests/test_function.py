@@ -14,4 +14,4 @@ def test_function():
 	requests_cache.remove_expired_responses()
 
 	main([])  # Current day
-	main(["1", "2"])  # 2nd Jan
+	main(['1', '2'])  # 2nd Jan
