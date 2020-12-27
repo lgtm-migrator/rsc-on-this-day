@@ -31,6 +31,7 @@ import datetime
 import pathlib
 import sys
 import textwrap
+from typing import Union
 
 # 3rd party
 import appdirs  # type: ignore
@@ -63,7 +64,14 @@ date_arg_error_str = "If requesting a specific date both the month and day must 
 
 # Cache answers for 5 hours
 @cachier(stale_after=datetime.timedelta(hours=5), cache_dir=str(cache_dir))
-def get_fact(month=None, day=None):
+def get_fact(month: Union[str, int, None] = None, day: Union[str, int, None] = None):
+	"""
+	Returns the fact for the given date.
+
+	:param month:
+	:param day:
+	"""
+
 	if (month and not day) or (day and not month):
 		raise SyntaxError(date_arg_error_str)
 
@@ -86,19 +94,27 @@ def get_fact(month=None, day=None):
 	return header, body
 
 
-def clear_cache():
+def clear_cache() -> int:
+	"""
+	Clear any cached responses.
+	"""
+
 	requests_cache.clear()
 	get_fact.clear_cache()
 	print("Cache cleared successfully.")
 	return 0
 
 
-def version():
+def version() -> int:
+	"""
+	Prints the version number of ``rsc-on-this-day``.
+	"""
+
 	print(__version__)
 	return 0
 
 
-def main(argv):
+def main(argv):  # noqa: D103
 	# stdlib
 	import argparse
 
