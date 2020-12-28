@@ -7,7 +7,7 @@ author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'
 username: 'domdfcoding'
 version: '0.2.3'
-license: 'GPLv3'
+license: 'MIT'
 short_desc: 'Displays Royal Society of Chemistry "On This Day" facts.'
 
 enable_conda: False
@@ -29,6 +29,7 @@ python_versions:
 
 console_scripts:
   - rsc_on_this_day=rsc_on_this_day:main
+  - rsc-on-this-day=rsc_on_this_day:main
 
 #tox_build_requirements:
 #  - domdf_python_tools
