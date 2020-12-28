@@ -7,6 +7,7 @@ from typing import Callable
 # 3rd party
 import pytest
 from apeye import RequestsURL
+from domdf_python_tools.testing import check_file_regression
 from pytest_regressions.file_regression import FileRegressionFixture
 
 # this package
@@ -61,24 +62,24 @@ def test_get_fact(
 		monkeypatched_requests,
 		):
 	with warnings.catch_warnings():
-		warnings.filterwarnings("ignore", category=DeprecationWarning)
+		warnings.filterwarnings("ignore", category=UserWarning)
 		clear_cache()
 
 	add = lambda args: '\n'.join(args)
 
-	file_regression.check(add(get_fact(*date)))
+	check_file_regression(add(get_fact(*date)), file_regression)
 
 	# Subsequent runs to test cache
 
-	file_regression.check(add(get_fact(*date)))
-	file_regression.check(add(get_fact(*date)))
+	check_file_regression(add(get_fact(*date)), file_regression)
+	check_file_regression(add(get_fact(*date)), file_regression)
 
 	assert RequestsURL.get.call_count == 1  # type: ignore
 
 
 def test_get_fact_errors():
 	with warnings.catch_warnings():
-		warnings.filterwarnings("ignore", category=DeprecationWarning)
+		warnings.filterwarnings("ignore", category=UserWarning)
 		clear_cache()
 
 	with pytest.raises(SyntaxError, match=re.escape(date_arg_error_str)):
