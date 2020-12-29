@@ -11,6 +11,8 @@ license: 'MIT'
 short_desc: 'Displays Royal Society of Chemistry "On This Day" facts.'
 
 enable_conda: False
+sphinx_html_theme: furo
+standalone_contrib_guide: true
 
 additional_ignore:
   - cache.db

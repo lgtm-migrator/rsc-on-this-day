@@ -8,8 +8,6 @@ RSC On This Day in Chemistry
 
 .. end short_desc
 
-Displays Royal Society of Chemistry "On This Day" facts in your terminal.
-
 .. start shields
 
 .. list-table::
@@ -136,23 +134,20 @@ Once installed, ``rsc_on_this_day`` can be run by typing:
 If ``rsc_on_this_day`` is not installed in a directory in ``$PATH``, you may need to add ``~/.local/bin/`` to your ``$PATH``.
 
 
+.. toctree::
+	:hidden:
 
-Adding to ``~/.bashrc``
------------------------
+	Home<self>
 
-``rsc_on_this_day`` can be run every time you open a terminal by adding ``rsc_on_this_day`` to your ``~/.bashrc`` file. For example:
-
-.. prompt:: bash
-
-	echo "rsc_on_this_day" >> ~/.bashrc
-
+Contents
+-----------
 
 .. toctree::
 	:maxdepth: 3
 	:caption: Documentation
 
-	docs
-	Manpage<manpage>
+	usage
+	api
 	contributing
 	Source
 
