@@ -52,3 +52,14 @@ console_scripts:
 #  - "  copytree('manpage-builder/build/man', '.')"
 
 # TODO: include manpage in wheel and put in right place on filesystem
+
+extra_sphinx_extensions:
+ - sphinx_click
+
+keywords:
+  - chemistry
+  - terminal
+
+classifiers:
+ - 'Development Status :: 4 - Beta'
+ - 'Environment :: Console'
