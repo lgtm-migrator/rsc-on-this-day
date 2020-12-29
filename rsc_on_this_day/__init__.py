@@ -41,7 +41,7 @@ from domdf_python_tools.dates import check_date, months, parse_month
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2019-2020 Dominic Davis-Foster"
 __license__ = "GPLv3"
-__version__ = "0.2.3"
+__version__ = "0.3.0"
 __email__ = "dominic@davis-foster.co.uk"
 
 __all__ = ["clear_cache", "get_fact", "fact_cache"]
