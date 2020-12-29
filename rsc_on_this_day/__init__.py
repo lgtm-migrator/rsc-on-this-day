@@ -36,7 +36,7 @@ from typing import Tuple, Union
 from apeye import RequestsURL
 from apeye.cache import Cache
 from bs4 import BeautifulSoup  # type: ignore
-from domdf_python_tools.dates import check_date, months
+from domdf_python_tools.dates import check_date, months, parse_month
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2019-2020 Dominic Davis-Foster"
@@ -57,6 +57,9 @@ _base_url = RequestsURL(
 
 date_arg_error_str = "If requesting a specific date both the month and day must be given."
 
+month_full_names = list(months.values())
+month_short_names = list(months.keys())
+
 
 @fact_cache
 def get_fact(
@@ -66,8 +69,11 @@ def get_fact(
 	"""
 	Returns the fact for the given date.
 
-	:param month:
-	:param day:
+	:param month: The month, either its short name (e.g. ``'Oct'``), its full name (e.g. ``'October'``)
+		or its number (e.g. ``10``).
+	:param day: The day of the month.
+
+	If ``month`` and ``day`` are both left as :py:obj:`None` (the default) the current date is used.
 	"""
 
 	if (month and day is None) or (day and month is None):
@@ -82,16 +88,9 @@ def get_fact(
 	if month is None or day is None:
 		raise SyntaxError(date_arg_error_str)
 
-	if isinstance(month, int) or month.isdigit():
-		month = int(month)
+	month = parse_month(month)
 
-		if month < 1 or month > 12:
-			raise ValueError(f"Invalid month {month!r}")
-
-		month = list(months.values())[month - 1]
-	elif month not in months.values():
-		raise ValueError(f"Invalid month {month!r}")
-
+	# Check that the date is valid
 	if not check_date(month, day):  # type: ignore
 		raise ValueError(f"Invalid day {day!r} for month {month!r}")
 

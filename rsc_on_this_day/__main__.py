@@ -37,7 +37,7 @@ from typing import Union
 import click
 from click import Context, Parameter, version_option
 from consolekit import click_command
-from domdf_python_tools.dates import check_date, parse_month
+from consolekit.options import auto_default_option, flag_option
 
 # this package
 import rsc_on_this_day
@@ -52,30 +52,30 @@ def clear_cache_callback(context: Context, param: Parameter, value):
 
 
 @click.argument(
-		"month",
-		type=click.INT,
-		default=None,
-		required=False,
-		)
-@click.argument(
 		"day",
 		type=click.INT,
 		default=None,
 		required=False,
 		)
-@click.option(
+@click.argument(
+		"month",
+		type=click.STRING,
+		default=None,
+		required=False,
+		)
+@auto_default_option(
 		"-w",
 		"--width",
 		type=click.INT,
-		default=80,
-		help="The number of characters per line of the output. Default 80. Set to -1 to disable wrapping."
+		show_default=True,
+		help="The number of characters per line of the output. Set to -1 to disable wrapping."
 		)
-@click.option(
+@flag_option(
 		"--clear-cache",
-		is_flag=True,
-		default=False,
 		help="Clear any cached data and exit.",
 		callback=clear_cache_callback,
+		expose_value=False,
+		is_eager=True,
 		)
 @version_option(__version__)
 @click_command()
@@ -83,7 +83,6 @@ def main(
 		month: Union[str, int, None] = None,
 		day: Union[str, int, None] = None,
 		width: int = 80,
-		clear_cache: bool = False,
 		):
 	"""
 	Display the Royal Society of Chemistry "On This Day In Chemistry" fact for the given day.
@@ -91,23 +90,10 @@ def main(
 	If no date is given the current date is used.
 	"""
 
-	if clear_cache:
-		sys.exit(rsc_on_this_day.clear_cache())
-
-	if (month and day is None) or (day and month is None):
-		raise click.UsageError(rsc_on_this_day.date_arg_error_str)
-
-	if month is not None and day is not None:
-		try:
-			month = parse_month(month)
-		except ValueError:
-			raise click.UsageError(f"Invalid value for month: {month}")
-
-		# Check that the date is valid
-		if not check_date(month, day):  # type: ignore
-			click.UsageError(f"{day}/{month} is not a valid date.")
-
-	header, body = rsc_on_this_day.get_fact(month, day)
+	try:
+		header, body = rsc_on_this_day.get_fact(month, day)
+	except (SyntaxError, ValueError) as e:
+		raise click.UsageError(str(e))
 
 	if width > 0:
 		header = textwrap.fill(header, width)

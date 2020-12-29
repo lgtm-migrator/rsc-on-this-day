@@ -1,4 +1,5 @@
 # stdlib
+import datetime
 import re
 import warnings
 from functools import wraps
@@ -60,10 +61,19 @@ def test_get_fact(
 		date,
 		file_regression: FileRegressionFixture,
 		monkeypatched_requests,
+		monkeypatch,
 		):
 	with warnings.catch_warnings():
 		warnings.filterwarnings("ignore", category=UserWarning)
 		clear_cache()
+
+	class MockedDate(datetime.date):
+
+		@classmethod
+		def today(cls):
+			return datetime.date(2020, 12, 28)
+
+	monkeypatch.setattr(datetime, "date", MockedDate)
 
 	add = lambda args: '\n'.join(args)
 
@@ -89,11 +99,11 @@ def test_get_fact_errors():
 	with pytest.raises(SyntaxError, match=re.escape(date_arg_error_str)):
 		get_fact(day=3)
 
-	with pytest.raises(ValueError, match="Invalid month 'Avril'"):
+	with pytest.raises(ValueError, match=r"The given month \('Avril'\) is not recognised."):
 		get_fact("Avril", 1)
-	with pytest.raises(ValueError, match="Invalid month 0"):
+	with pytest.raises(ValueError, match=r"The given month \(0\) is not recognised."):
 		get_fact(0, 1)
-	with pytest.raises(ValueError, match="Invalid month 13"):
+	with pytest.raises(ValueError, match=r"The given month \(13\) is not recognised."):
 		get_fact(13, 1)
 	with pytest.raises(ValueError, match="Invalid day 0 for month 'January'"):
 		get_fact(1, 0)
