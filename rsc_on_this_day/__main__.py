@@ -5,7 +5,7 @@
 Displays Royal Society of Chemistry "On This Day In Chemistry" facts in your terminal.
 """
 #
-#  Copyright © 2019-2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright © 2019-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
 #  Cached copies of the RSC On This Day website Copyright © 2020 Royal Society of Chemistry
 #
