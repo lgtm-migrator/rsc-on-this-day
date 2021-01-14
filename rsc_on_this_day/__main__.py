@@ -35,18 +35,16 @@ from typing import Union
 
 # 3rd party
 import click
-from click import Context, Parameter, version_option
 from consolekit import click_command
 from consolekit.options import auto_default_option, flag_option
 
 # this package
 import rsc_on_this_day
-from rsc_on_this_day import __version__
 
 __all__ = ["main"]
 
 
-def clear_cache_callback(context: Context, param: Parameter, value):
+def clear_cache_callback(context: click.Context, param: click.Parameter, value):
 	if value:
 		sys.exit(rsc_on_this_day.clear_cache())
 
@@ -77,7 +75,7 @@ def clear_cache_callback(context: Context, param: Parameter, value):
 		expose_value=False,
 		is_eager=True,
 		)
-@version_option(__version__)
+@click.version_option(rsc_on_this_day.__version__)
 @click_command()
 def main(
 		month: Union[str, int, None] = None,
