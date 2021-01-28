@@ -65,3 +65,5 @@ keywords:
 classifiers:
  - 'Development Status :: 4 - Beta'
  - 'Environment :: Console'
+
+min_coverage: 90
