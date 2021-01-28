@@ -1,6 +1,6 @@
 # 3rd party
-from click.testing import CliRunner, Result
-from domdf_python_tools.testing import check_file_regression
+from coincidence import check_file_regression
+from consolekit.testing import CliRunner, Result
 from pytest_regressions.file_regression import FileRegressionFixture
 
 # this package
