@@ -5,7 +5,7 @@
 Displays Royal Society of Chemistry "On This Day In Chemistry" facts in your terminal.
 """
 #
-#  Copyright © 2019-2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright © 2019-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
 #  Cached copies of the RSC On This Day website Copyright © 2020 Royal Society of Chemistry
 #
@@ -35,6 +35,7 @@ from typing import Tuple, Union
 # 3rd party
 from apeye import RequestsURL
 from apeye.cache import Cache
+from apeye.requests_url import RequestsURL
 from bs4 import BeautifulSoup  # type: ignore
 from domdf_python_tools.dates import check_date, months, parse_month
 

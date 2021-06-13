@@ -7,7 +7,7 @@ from typing import Callable
 
 # 3rd party
 import pytest
-from apeye import RequestsURL
+from apeye.requests_url import RequestsURL
 from coincidence import check_file_regression
 from pytest_regressions.file_regression import FileRegressionFixture
 
