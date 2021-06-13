@@ -10,6 +10,7 @@ version: '0.3.0'
 license: 'MIT'
 short_desc: 'Displays Royal Society of Chemistry "On This Day" facts.'
 
+use_whey: true
 enable_conda: False
 sphinx_html_theme: furo
 standalone_contrib_guide: true
@@ -19,8 +20,8 @@ additional_ignore:
   # manpage
   - rsc_on_this_day.1
 
-manifest_additional:
-  - include rsc_on_this_day.1
+#manifest_additional:
+#  - include rsc_on_this_day.1
 
 python_versions:
   - '3.6'
