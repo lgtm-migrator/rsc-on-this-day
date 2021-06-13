@@ -36,7 +36,7 @@ from typing import Union
 # 3rd party
 import click
 from consolekit import click_command
-from consolekit.options import auto_default_option, flag_option
+from consolekit.options import auto_default_argument, auto_default_option, flag_option
 
 # this package
 import rsc_on_this_day
@@ -49,18 +49,8 @@ def clear_cache_callback(context: click.Context, param: click.Parameter, value):
 		sys.exit(rsc_on_this_day.clear_cache())
 
 
-@click.argument(
-		"day",
-		type=click.INT,
-		default=None,
-		required=False,
-		)
-@click.argument(
-		"month",
-		type=click.STRING,
-		default=None,
-		required=False,
-		)
+@auto_default_argument("day", type=click.INT)
+@auto_default_argument("month", type=click.STRING)
 @auto_default_option(
 		"-w",
 		"--width",

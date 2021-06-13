@@ -33,7 +33,7 @@ import datetime
 from typing import Tuple, Union
 
 # 3rd party
-from apeye import RequestsURL
+import click
 from apeye.cache import Cache
 from apeye.requests_url import RequestsURL
 from bs4 import BeautifulSoup  # type: ignore
@@ -41,7 +41,7 @@ from domdf_python_tools.dates import check_date, months, parse_month
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2019-2020 Dominic Davis-Foster"
-__license__ = "GPLv3"
+__license__ = "MIT"
 __version__ = "0.3.0"
 __email__ = "dominic@davis-foster.co.uk"
 
@@ -110,7 +110,7 @@ def clear_cache() -> int:
 	"""
 
 	if fact_cache.clear():
-		print("Cache cleared successfully.")
+		click.echo("Cache cleared successfully.")
 		return 0
 
 	return 1
