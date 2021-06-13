@@ -92,7 +92,7 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/rsc-on-this-day
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/rsc-on-this-day/v0.3.0
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/rsc-on-this-day/v0.4.0
 	:target: https://github.com/domdfcoding/rsc-on-this-day/pulse
 	:alt: GitHub commits since tagged version
 

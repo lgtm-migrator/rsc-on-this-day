@@ -40,7 +40,7 @@ from bs4 import BeautifulSoup  # type: ignore
 from domdf_python_tools.dates import check_date, months, parse_month
 
 __author__ = "Dominic Davis-Foster"
-__copyright__ = "2019-2020 Dominic Davis-Foster"
+__copyright__ = "2019-2021 Dominic Davis-Foster"
 __license__ = "MIT"
 __version__ = "0.3.0"
 __email__ = "dominic@davis-foster.co.uk"
