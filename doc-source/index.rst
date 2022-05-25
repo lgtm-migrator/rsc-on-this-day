@@ -58,7 +58,8 @@ RSC On This Day in Chemistry
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/badge.svg
+		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
@@ -103,7 +104,7 @@ RSC On This Day in Chemistry
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
@@ -124,6 +125,9 @@ Installation
 	:github:
 
 .. end installation
+
+.. latex:vspace:: 20px
+
 
 Once installed, ``rsc_on_this_day`` can be run by typing:
 
@@ -152,6 +156,7 @@ Contents
 	api
 	contributing
 	Source
+	license
 
 .. sidebar-links::
 	:caption: Links

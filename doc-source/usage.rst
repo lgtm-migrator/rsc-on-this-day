@@ -33,6 +33,8 @@ Examples
 
 * Display the "On This Day In Chemistry" fact for 25 December.
 
+.. latex:clearpage::
+
 .. prompt:: bash
 
 	rsc_on_this_day --clear-cache
