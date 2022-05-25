@@ -8,8 +8,7 @@ from typing import Callable, Tuple
 # 3rd party
 import pytest
 from apeye.requests_url import RequestsURL
-from coincidence import check_file_regression
-from pytest_regressions.file_regression import FileRegressionFixture
+from coincidence.regressions import AdvancedFileRegressionFixture
 
 # this package
 from rsc_on_this_day import clear_cache, date_arg_error_str, get_fact
@@ -59,7 +58,7 @@ def monkeypatched_requests(monkeypatch):
 		)
 def test_get_fact(
 		date: Tuple,
-		file_regression: FileRegressionFixture,
+		advanced_file_regression: AdvancedFileRegressionFixture,
 		monkeypatched_requests,
 		monkeypatch,
 		) -> None:
@@ -77,12 +76,11 @@ def test_get_fact(
 
 	add = lambda args: '\n'.join(args)
 
-	check_file_regression(add(get_fact(*date)), file_regression)
+	advanced_file_regression.check(add(get_fact(*date)))
 
 	# Subsequent runs to test cache
-
-	check_file_regression(add(get_fact(*date)), file_regression)
-	check_file_regression(add(get_fact(*date)), file_regression)
+	advanced_file_regression.check(add(get_fact(*date)))
+	advanced_file_regression.check(add(get_fact(*date)))
 
 	assert RequestsURL.get.call_count == 1  # type: ignore[attr-defined]
 
