@@ -36,7 +36,7 @@ from typing import Tuple, Union
 import click
 from apeye.cache import Cache
 from apeye.requests_url import RequestsURL
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup  # type: ignore[import]
 from domdf_python_tools.dates import check_date, months, parse_month
 
 __author__ = "Dominic Davis-Foster"
@@ -92,7 +92,7 @@ def get_fact(
 	month = parse_month(month)
 
 	# Check that the date is valid
-	if not check_date(month, day):  # type: ignore
+	if not check_date(month, int(day)):
 		raise ValueError(f"Invalid day {day!r} for month {month!r}")
 
 	page = (_base_url / f"{month}-{day}").get()

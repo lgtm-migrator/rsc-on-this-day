@@ -44,7 +44,7 @@ import rsc_on_this_day
 __all__ = ["main"]
 
 
-def clear_cache_callback(context: click.Context, param: click.Parameter, value):
+def clear_cache_callback(context: click.Context, param: click.Parameter, value: bool) -> None:
 	if value:
 		sys.exit(rsc_on_this_day.clear_cache())
 
@@ -71,7 +71,7 @@ def main(
 		month: Union[str, int, None] = None,
 		day: Union[str, int, None] = None,
 		width: int = 80,
-		):
+		) -> None:
 	"""
 	Display the Royal Society of Chemistry "On This Day In Chemistry" fact for the given day.
 

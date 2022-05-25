@@ -1,5 +1,4 @@
 # 3rd party
-from coincidence import check_file_regression
 from consolekit.testing import CliRunner, Result
 from pytest_regressions.file_regression import FileRegressionFixture
 
@@ -7,7 +6,7 @@ from pytest_regressions.file_regression import FileRegressionFixture
 from rsc_on_this_day.__main__ import main
 
 
-def test_cli(file_regression: FileRegressionFixture):
+def test_cli(file_regression: FileRegressionFixture) -> None:
 
 	runner = CliRunner()
 
@@ -24,7 +23,7 @@ def test_cli(file_regression: FileRegressionFixture):
 	result.check_stdout(file_regression)
 
 
-def test_cli_clear_cache(file_regression: FileRegressionFixture):
+def test_cli_clear_cache(file_regression: FileRegressionFixture) -> None:
 
 	runner = CliRunner()
 

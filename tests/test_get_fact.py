@@ -3,7 +3,7 @@ import datetime
 import re
 import warnings
 from functools import wraps
-from typing import Callable
+from typing import Callable, Tuple
 
 # 3rd party
 import pytest
@@ -19,10 +19,10 @@ def call_count(func: Callable) -> Callable:
 
 	@wraps(func)
 	def wrapper(*args, **kwargs):
-		wrapper.call_count += 1  # type: ignore
+		wrapper.call_count += 1  # type: ignore[attr-defined]
 		return func(*args, **kwargs)
 
-	wrapper.call_count = 0  # type: ignore
+	wrapper.call_count = 0  # type: ignore[attr-defined]
 	return wrapper
 
 
@@ -58,11 +58,11 @@ def monkeypatched_requests(monkeypatch):
 				]
 		)
 def test_get_fact(
-		date,
+		date: Tuple,
 		file_regression: FileRegressionFixture,
 		monkeypatched_requests,
 		monkeypatch,
-		):
+		) -> None:
 	with warnings.catch_warnings():
 		warnings.filterwarnings("ignore", category=UserWarning)
 		clear_cache()
@@ -84,10 +84,10 @@ def test_get_fact(
 	check_file_regression(add(get_fact(*date)), file_regression)
 	check_file_regression(add(get_fact(*date)), file_regression)
 
-	assert RequestsURL.get.call_count == 1  # type: ignore
+	assert RequestsURL.get.call_count == 1  # type: ignore[attr-defined]
 
 
-def test_get_fact_errors():
+def test_get_fact_errors() -> None:
 	with warnings.catch_warnings():
 		warnings.filterwarnings("ignore", category=UserWarning)
 		clear_cache()
