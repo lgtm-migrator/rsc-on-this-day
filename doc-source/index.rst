@@ -58,8 +58,8 @@ RSC On This Day in Chemistry
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/badge.svg
-		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/rsc-on-this-day/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/rsc-on-this-day/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::

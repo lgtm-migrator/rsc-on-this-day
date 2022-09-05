@@ -57,8 +57,8 @@ Displays Royal Society of Chemistry "On This Day" facts in your terminal.
 	:target: https://github.com/domdfcoding/rsc-on-this-day/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/rsc-on-this-day/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/rsc-on-this-day/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/rsc-on-this-day/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/rsc-on-this-day/master?logo=coveralls
